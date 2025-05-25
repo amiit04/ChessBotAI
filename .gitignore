@@ -1,0 +1,19 @@
+# Ignore Python compiled files
+*.pyc
+__pycache__/
+gitignore
+
+# Ignore node_modules
+node_modules/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
