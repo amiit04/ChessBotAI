@@ -61,7 +61,7 @@ def choose_color(screen, renderer):
             - running=False if the user closed the window.
             - bot_color=True if the bot should play Black, False if the bot plays White.
     """
-    screen.fill(WHITE)
+    screen.fill(BLACK)
     renderer.show_text("Press W for White or B for Black")
     pygame.display.flip()
     while True:
@@ -182,7 +182,7 @@ def main():
     renderer = Renderer(screen, img_dir)
 
     # Initialize the chess logic (bot) with a given search depth
-    chesslogic = ChessLogic(depth=1)
+    chesslogic = ChessLogic(depth=3)
     board = chess.Board()
 
     running, bot_color = choose_color(screen, renderer)
@@ -212,7 +212,7 @@ def main():
         for ev in pygame.event.get():
             if ev.type == pygame.QUIT:
                 running = False
-                break
+                return
 
             # --- Undo with Left Arrow ---
             if ev.type == pygame.KEYDOWN and ev.key == pygame.K_LEFT:
