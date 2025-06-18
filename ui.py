@@ -116,7 +116,7 @@ def check_for_gameover(board: chess.Board, screen: pygame.Surface, renderer: Ren
     # Render the message to the screen
     renderer.show_text(msg)
     pygame.display.flip()
-    time.sleep(2)
+    time.sleep(5)
     return False
 
 def make_move(board, move, renderer, redo_stack):

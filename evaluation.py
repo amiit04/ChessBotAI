@@ -189,11 +189,13 @@ class ChessLogic:
         
         if board.is_game_over():
             if board.is_checkmate():
-                score = float('inf') if maximizing_player else -float('inf')
+                score = -float('inf') if maximizing_player else float('inf')
             else:
                 score = 0
+            return score, None
         elif depth == 0:
             score = self.evaluate_board(board)
+            return score, None
         else:
             moves = list(board.legal_moves)
             # MVV-LVA (Most Valuable Victim – Least Valuable Aggressor) based sorting
